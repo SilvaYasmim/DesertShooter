@@ -5,15 +5,16 @@ COLOR_YELLOW = (255, 255, 0)
 
 # E
 ENTITY_SPEED ={
-    'Level1Bg0' :0,
-    'Level1Bg1' :1,
-    'Level1Bg2' :2,
-    'Level1Bg3' :3,
-    'Level1Bg4' :4,
-    'Level1Bg5' :5,
-    'Level1Bg6' :6,
-    'Level1Bg7' :7,
+    'Level1Bg0': 0,
+    'Level1Bg1': 1,
+    'Level1Bg2': 2,
+    'Level1Bg3': 3,
+    'Level1Bg4': 4,
+    'Player1': 5,
+    'Enemy1': 2,
+'Player1Shot': 8,
 }
+
 
 #M
 MENU_OPTION = ('NEW GAME 1P',
