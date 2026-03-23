@@ -1,14 +1,25 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import pygame
-from code.const import WIN_HEIGHT, WIN_WIDTH, ENTITY_SPEED
+from code.const import ENTITY_SPEED, WIN_HEIGHT, WIN_WIDTH
 from code.entity import Entity
 
 class Player(Entity):
     def __init__(self, name: str, position: tuple):
         super().__init__(name, position)
+        self.health = 3
+        self.invincible_timer = 0
+        self.visible = True
 
     def move(self):
+        # Controle de invulnerabilidade (piscar)
+        if self.invincible_timer > 0:
+            self.invincible_timer -= 1
+            if self.invincible_timer % 5 == 0:
+                self.visible = not self.visible
+        else:
+            self.visible = True
+
         pressed_keys = pygame.key.get_pressed()
         if pressed_keys[pygame.K_UP] and self.rect.top > 0:
             self.rect.centery -= ENTITY_SPEED[self.name]
@@ -18,6 +29,7 @@ class Player(Entity):
             self.rect.centerx -= ENTITY_SPEED[self.name]
         if pressed_keys[pygame.K_RIGHT] and self.rect.right < WIN_WIDTH:
             self.rect.centerx += ENTITY_SPEED[self.name]
+
         if pressed_keys[pygame.K_SPACE]:
             return 'Player1Shot'
         return None

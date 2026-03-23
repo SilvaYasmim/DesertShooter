@@ -35,11 +35,11 @@ class Menu:
                 else:
                     self.menu_text(25, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2), pos_y))
 
-            # 4. Desenha os controles UMA ÚNICA VEZ (fora do for das opções)
+            # 4. Desenha os controles UMA ÚNICA VEZ
             self.menu_text(15, "Controles: Setas para Mover | Espaço para Atirar", COLOR_WHITE,
                            ((WIN_WIDTH / 2), WIN_HEIGHT - 20))
 
-            # 5. ATUALIZA A TELA (Fora de todos os laços for, apenas uma vez por ciclo do while)
+            # 5. ATUALIZA A TELA
             pygame.display.flip()
 
             # 6. Verifica eventos
